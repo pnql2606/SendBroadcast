@@ -1,4 +1,4 @@
-package com.tiendatmagic.sendbroadcast;
+package com.pnql.sendbroadcast;
 
 import android.content.Context;
 

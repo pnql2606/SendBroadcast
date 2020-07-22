@@ -1,4 +1,4 @@
-package com.tiendatmagic.sendbroadcast;
+package com.pnql.sendbroadcast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,19 +10,20 @@ import android.content.IntentFilter;
 
 public class SendBroadcastActivity extends AppCompatActivity {
 
+    private static final Object R = ;
     BroadcastReceiver receiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_send_broadcast);
+        setContentView(R.attr.layout.activity_send_broadcast);
         configureReceiver();
     }
 
     public void broadcastIntent(View view)
     {
         Intent intent = new Intent();
-        intent.setAction("com.tiendatmagic.sendbroadcast");
+        intent.setAction("com.pnql.sendbroadcast");
 
         //cho phép intent bắt đầu một thành phần
         //của ứng dụng trong trạng thái dừng
@@ -33,7 +34,7 @@ public class SendBroadcastActivity extends AppCompatActivity {
 
     private void configureReceiver() {
         IntentFilter filter = new IntentFilter();
-        filter.addAction("com.tiendatmagic.sendbroadcast");
+        filter.addAction("com.pnql.sendbroadcast");
         filter.addAction("android.intent.action.ACTION_POWER_DISCONNECTED");
         receiver = new MyReceiver();
         registerReceiver(receiver, filter);
